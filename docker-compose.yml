@@ -1,0 +1,44 @@
+services:
+  db:
+    image: postgres:16
+    container_name: polyclinic_db
+    environment:
+      POSTGRES_DB: polyclinic
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres123
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: .
+      dockerfile: Polyclinic.API/Dockerfile
+    container_name: polyclinic_backend
+    ports:
+      - "5289:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=polyclinic;Username=postgres;Password=postgres123
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./polyclinic.web
+      dockerfile: Dockerfile
+    container_name: polyclinic_frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  pgdata:

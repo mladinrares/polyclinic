@@ -1,0 +1,22 @@
+# .NET
+**/bin/
+**/obj/
+*.user
+*.suo
+.vs/
+
+# Node
+**/node_modules/
+**/dist/
+
+# Environment
+**/.env
+**/appsettings.Development.json
+
+# Docker
+**/docker-compose.override.yml
+
+# Logs
+*.log
+
+**/appsettings.json

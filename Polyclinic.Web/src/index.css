@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav-link-hover {
+  transition: background 0.15s, color 0.15s;
+}
+
+.nav-link-hover:hover {
+  background: rgba(0, 0, 0, 0.06);
+  color: var(--color-text-primary);
+}
+
+:root {
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #f9fafb;
+  --color-background-tertiary: #f3f4f6;
+  --color-background-info: #eff6ff;
+  --color-background-success: #f0fdf4;
+  --color-background-danger: #fef2f2;
+  --color-background-warning: #fffbeb;
+  --color-text-primary: #111827;
+  --color-text-secondary: #6b7280;
+  --color-text-tertiary: #9ca3af;
+  --color-text-info: #2563eb;
+  --color-text-success: #16a34a;
+  --color-text-danger: #dc2626;
+  --color-text-warning: #d97706;
+  --color-border-tertiary: rgba(0,0,0,0.08);
+  --color-border-secondary: rgba(0,0,0,0.15);
+  --color-border-primary: rgba(0,0,0,0.2);
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.hero-stats { display: flex; gap: 32px; }
+.hero-buttons { display: flex; gap: 12px; margin-bottom: 40px; }
+
+@media (max-width: 768px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+  .steps-grid { grid-template-columns: 1fr; gap: 16px; }
+  .reviews-grid { grid-template-columns: 1fr; gap: 12px; }
+  .hero-stats { gap: 16px; flex-wrap: wrap; }
+  .hero-buttons { flex-direction: column; }
+}
+
+@media (max-width: 480px) {
+  .hero-buttons { flex-direction: column; }
+  .hero-buttons a { text-align: center; width: 100%; box-sizing: border-box; }
+  .hero-stats { gap: 12px; }
+  .hero-stats > div { min-width: 70px; }
+}
+
+.tabs-container {
+  display: flex;
+  gap: 4px;
+  border-bottom: 0.5px solid rgba(0,0,0,0.08);
+  margin-bottom: 24px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.tabs-container::-webkit-scrollbar {
+  display: none;
+}
+div[style*="overflowX: auto"]::-webkit-scrollbar {
+  display: none;
+}
+
+
+@keyframes slideIn {
+  from { transform: translateX(20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
