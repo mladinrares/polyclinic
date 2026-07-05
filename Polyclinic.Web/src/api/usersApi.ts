@@ -62,5 +62,5 @@ export const usersApi = {
     });
   },
 
-  deleteOwnAccount: () => api.delete('/user/me'),
+  deleteOwnAccount: () => api.delete('/users/me'),
 };

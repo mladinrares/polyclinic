@@ -833,7 +833,7 @@ namespace Polyclinic.Infrastructure.Services
                             if (walkIn != null)
                             {
                                 // walk-in nu are email, doar notificare telefonica
-                                // puteti adauga email optional pe WalkInPatient daca vreti
+                                
                             }
                         }
                     }
@@ -898,7 +898,6 @@ namespace Polyclinic.Infrastructure.Services
                             if (walkIn != null)
                             {
                                 // walk-in nu are email, doar notificare telefonica
-                                // puteti adauga email optional pe WalkInPatient daca vreti
                             }
                         }
                     }

@@ -640,7 +640,7 @@ export default function AdminPage() {
                   {specialty.isActive ? (
                     <button
                       onClick={async () => {const ok = await confirm({ title: 'Dezactivezi specialitatea?', message: `Specialitatea "${specialty.name}" nu va mai fi vizibilă.`, confirmLabel: 'Dezactivează', variant: 'danger' });
-  if (!ok) return; await adminApi.deleteSpecialty(specialty.id); fetchAll(); }}
+                      if (!ok) return; await adminApi.deleteSpecialty(specialty.id); fetchAll(); }}
                       title="Dezactivează"
                       style={{ width: '30px', height: '30px', borderRadius: 'var(--border-radius-md)', background: '#FCEBEB', color: '#A32D2D', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'opacity 0.15s' }}
                       onMouseEnter={e => e.currentTarget.style.opacity = '0.75'}
@@ -731,7 +731,7 @@ export default function AdminPage() {
                   {location.isActive ? (
                     <button
                       onClick={async () => { const ok = await confirm({ title: 'Dezactivezi locația?', message: `Locația "${location.name}" nu va mai fi vizibilă.`, confirmLabel: 'Dezactivează', variant: 'danger' });
-  if (!ok) return; await adminApi.deleteLocation(location.id); fetchAll(); }}
+                      if (!ok) return; await adminApi.deleteLocation(location.id); fetchAll(); }}
                       title="Dezactivează"
                       style={{ width: '30px', height: '30px', borderRadius: 'var(--border-radius-md)', background: '#FCEBEB', color: '#A32D2D', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'opacity 0.15s' }}
                       onMouseEnter={e => e.currentTarget.style.opacity = '0.75'}

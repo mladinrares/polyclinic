@@ -61,12 +61,9 @@ export default function App() {
           </Route>
 
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-
           <Route path="/verify-email" element={<VerifyEmailPage />} />
-
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/cookies" element={<CookiePolicyPage />} />
-
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>

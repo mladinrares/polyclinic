@@ -13,7 +13,7 @@ interface UIContextType {
 }
 
 export const UIContext = createContext<UIContextType | null>(null);
-
+ 
 export function useUIContext() {
   const ctx = useContext(UIContext);
   if (!ctx) throw new Error('useUIContext must be used within UIContext.Provider');

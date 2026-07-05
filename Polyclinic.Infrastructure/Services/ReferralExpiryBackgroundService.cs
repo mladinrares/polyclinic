@@ -32,7 +32,7 @@ namespace Polyclinic.Infrastructure.Services
                     _logger.LogError(ex, "Eroare la expirarea referral-urilor");
                 }
 
-                await Task.Delay(TimeSpan.FromHours(24), stoppingToken);
+                await Task.Delay(TimeSpan.FromHours(1), stoppingToken);
             }
         }
 

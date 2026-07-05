@@ -11,6 +11,7 @@ namespace Polyclinic.Domain.Entities
     public class Appointment : BaseEntity
     {
         public Guid? PatientId { get; set; }
+        public Guid? WalkInPatientId { get; set; }
         public Guid DoctorId { get; set; }
         public Guid ServiceId { get; set; }
         public Guid LocationId { get; set; }
@@ -29,7 +30,6 @@ namespace Polyclinic.Domain.Entities
         public DateTime? CompletedAt { get; set; }
         public DateTime? CheckedInAt { get; set; }
         public string? ExternalReferralUrl { get; set; }
-        public Guid? WalkInPatientId { get; set; }
         public string? CancelledByRole { get; set; } // "patient", "doctor", "receptionist", "admin"
 
 

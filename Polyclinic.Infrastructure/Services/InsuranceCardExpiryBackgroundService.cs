@@ -37,7 +37,7 @@ namespace Polyclinic.Infrastructure.Services
                     _logger.LogError(ex, "Eroare la expirarea cardurilor CNAS");
                 }
 
-                await Task.Delay(TimeSpan.FromHours(24), stoppingToken);
+                await Task.Delay(TimeSpan.FromHours(1), stoppingToken);
             }
         }
 

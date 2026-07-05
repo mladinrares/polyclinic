@@ -85,17 +85,15 @@ export default function ProfilePage() {
     resolver: zodResolver(profileSchema),
     mode: 'onChange',
   });
-  const {toast, confirm} = useUIContext();
-
   const passwordForm = useForm<PasswordForm>({
     resolver: zodResolver(passwordSchema),
     mode: 'onChange',
   });
-
   const cardForm = useForm<CardForm>({
     resolver: zodResolver(cardSchema),
     mode: 'onChange',
   });
+  const {toast, confirm} = useUIContext();
 
   useEffect(() => {
     const fetch = async () => {
@@ -135,7 +133,6 @@ export default function ProfilePage() {
         setPendingPicture(null);
         setPendingPicturePreview(null);
       }
-      
       toast('Profilul a fost actualizat cu succes', 'success');
     } catch (err) {
       toast(getErrorMessage(err), 'error');

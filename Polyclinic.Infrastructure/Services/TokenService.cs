@@ -79,7 +79,7 @@ namespace Polyclinic.Infrastructure.Services
         public async Task<string> GenerateRefreshTokenAsync(User user, bool rememberMe = false)
         {
             var token = Convert.ToBase64String(RandomNumberGenerator.GetBytes(64));
-            var expiryDays = rememberMe ? 30 : int.Parse(_configuration["JwtSettings:RefreshTokenExpiryDays"]!);
+            var expiryDays = rememberMe ? 3 : int.Parse(_configuration["JwtSettings:RefreshTokenExpiryDays"]!);
 
             var refreshToken = new RefreshToken
             {

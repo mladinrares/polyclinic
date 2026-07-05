@@ -20,3 +20,5 @@
 *.log
 
 **/appsettings.json
+
+**/wwwroot/uploads/

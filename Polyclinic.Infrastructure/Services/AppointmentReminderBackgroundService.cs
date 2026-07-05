@@ -35,7 +35,7 @@ namespace Polyclinic.Infrastructure.Services
                 {
                     _logger.LogError(ex, "Eroare la trimiterea reminder-elor");
                 }
-                await Task.Delay(TimeSpan.FromHours(24), stoppingToken);
+                await Task.Delay(TimeSpan.FromHours(1), stoppingToken);
             }
         }
 

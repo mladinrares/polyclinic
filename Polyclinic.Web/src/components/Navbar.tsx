@@ -13,6 +13,7 @@ export default function Navbar() {
   const [showUserMenu, setShowUserMenu] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const notifRef = useRef<HTMLDivElement>(null);
+  const notifMobileRef = useRef<HTMLDivElement>(null);
   const userRef = useRef<HTMLDivElement>(null);
 
   const unreadCount = notifications.filter(n => !n.isRead).length;
@@ -26,9 +27,12 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (notifRef.current && !notifRef.current.contains(e.target as Node))
+      const target = e.target as Node;
+      const insideDesktop = notifRef.current?.contains(target);
+      const insideMobile = notifMobileRef.current?.contains(target);
+      if (!insideDesktop && !insideMobile)
         setShowNotifications(false);
-      if (userRef.current && !userRef.current.contains(e.target as Node))
+      if (userRef.current && !userRef.current.contains(target))
         setShowUserMenu(false);
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -257,7 +261,7 @@ export default function Navbar() {
         <div style={{ display: 'none', alignItems: 'center', gap: '8px' }}
           className="mobile-nav">
           {isAuthenticated && (
-            <div ref={notifRef} style={{ position: 'relative' }}>
+            <div ref={notifMobileRef} style={{ position: 'relative' }}>
               <button
                 onClick={() => setShowNotifications(!showNotifications)}
                 style={{ position: 'relative', padding: '6px', borderRadius: 'var(--border-radius-md)', background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-text-secondary)' }}

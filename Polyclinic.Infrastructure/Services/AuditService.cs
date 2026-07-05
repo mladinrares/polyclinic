@@ -14,8 +14,6 @@ namespace Polyclinic.Infrastructure.Services
     {
 
         private readonly PolyclinicDbContext _context;
-
-
         public AuditService(PolyclinicDbContext context)
         {
             _context = context;

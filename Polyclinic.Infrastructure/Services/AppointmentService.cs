@@ -1061,7 +1061,6 @@ namespace Polyclinic.Infrastructure.Services
                 .ToListAsync();
         }
 
-
         private async Task<WaitingListEntryDto> MapWaitingListToDto(Guid id)
         {
             return await _context.WaitingLists

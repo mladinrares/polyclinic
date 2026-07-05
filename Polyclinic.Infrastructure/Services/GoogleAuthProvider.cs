@@ -41,7 +41,6 @@ namespace Polyclinic.Infrastructure.Services
                     CreatedAt = DateTime.UtcNow,
                     UpdatedAt = DateTime.UtcNow
                 };
-
                 _context.Users.Add(user);
                 await _context.SaveChangesAsync();
             }

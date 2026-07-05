@@ -88,7 +88,14 @@ namespace Polyclinic.Tests
             var slotId = Guid.NewGuid();
 
             var user = new User { Id = patientId, Email = "test@test.com", FirstName = "Ion", LastName = "Pop", Role = "patient", IsActive = true, PasswordHash = "x", Phone = "0700000000" };
-            var slot = new TimeSlot { Id = slotId, DoctorId = Guid.NewGuid(), LocationId = Guid.NewGuid(), SlotDate = DateOnly.FromDateTime(DateTime.UtcNow.AddDays(1)), StartTime = new TimeOnly(9, 0), EndTime = new TimeOnly(9, 30), IsAvailable = false, IsBlocked = false };
+            var slot = new TimeSlot { Id = slotId,
+                DoctorId = Guid.NewGuid(),
+                LocationId = Guid.NewGuid(),
+                SlotDate = DateOnly.FromDateTime(DateTime.UtcNow.AddDays(1)),
+                StartTime = new TimeOnly(9, 0),
+                EndTime = new TimeOnly(9, 30),
+                IsAvailable = false,
+                IsBlocked = false };
             var appointment = new Appointment
             {
                 Id = Guid.NewGuid(),
@@ -162,7 +169,15 @@ namespace Polyclinic.Tests
             var slotId = Guid.NewGuid();
 
             var user = new User { Id = otherId, Email = "other@test.com", FirstName = "Alt", LastName = "User", Role = "patient", IsActive = true, PasswordHash = "x", Phone = "0700000002" };
-            var slot = new TimeSlot { Id = slotId, DoctorId = Guid.NewGuid(), LocationId = Guid.NewGuid(), SlotDate = DateOnly.FromDateTime(DateTime.UtcNow.AddDays(1)), StartTime = new TimeOnly(9, 0), EndTime = new TimeOnly(9, 30), IsAvailable = false, IsBlocked = false };
+            var slot = new TimeSlot { Id = slotId,
+                DoctorId = Guid.NewGuid(),
+                LocationId = Guid.NewGuid(),
+                SlotDate = DateOnly.FromDateTime(DateTime.UtcNow.AddDays(1)),
+                StartTime = new TimeOnly(9, 0),
+                EndTime = new TimeOnly(9, 30),
+                IsAvailable = false,
+                IsBlocked = false };
+
             var appointment = new Appointment
             {
                 Id = Guid.NewGuid(),
