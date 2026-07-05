@@ -125,4 +125,4 @@ Polyclinic/
 
 ## 👨‍🎓 Autor
 
-**Rareș Mladin** — Proiect de diplomă, Universitatea din Craiova FACE, Iunie 2026
+**Rareș Mladin** — Proiect de diplomă, Universitatea din Craiova FACE, Iulie 2026
